@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The One.Pixel — Dashboard</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a1a;color:#e8f4fd;font:14px/1.6 "Courier New",monospace;padding:20px}
+h1{color:#B87333;font-size:18px;margin-bottom:20px;letter-spacing:2px}
+h1 span{color:#00A86B}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.card{background:#111128;border:1px solid #1a1a3a;border-radius:8px;padding:16px}
+.card h2{font-size:12px;color:#666;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+.card .value{font-size:28px;font-weight:bold}
+.card .sub{font-size:12px;color:#666;margin-top:4px}
+.copper{color:#B87333}
+.jade{color:#00A86B}
+.crystal{color:#E8F4FD}
+.red{color:#FF2200}
+.white{color:#FFFFFF}
+.status{display:flex;align-items:center;gap:8px;margin:8px 0}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.dot.green{background:#00A86B;box-shadow:0 0 6px #00A86B}
+.dot.copper{background:#B87333;box-shadow:0 0 6px #B87333}
+.dot.red{background:#FF2200;box-shadow:0 0 6px #FF2200}
+.dot.gray{background:#333}
+.bar{height:4px;background:#1a1a3a;border-radius:2px;margin-top:8px;overflow:hidden}
+.bar-fill{height:100%;border-radius:2px}
+.log{font-size:11px;color:#666;max-height:120px;overflow-y:auto;margin-top:8px}
+.log div{padding:2px 0;border-bottom:1px solid #1a1a3a}
+.log .type{color:#B87333}
+.log .hash{color:#333}
+.prefix{display:flex;gap:8px;margin-top:8px}
+.prefix span{padding:4px 12px;border-radius:4px;font-size:11px;border:1px solid #1a1a3a}
+.prefix .active{border-color:#B87333;color:#B87333;background:rgba(184,115,51,0.1)}
+@media(max-width:600px){.grid{grid-template-columns:1fr}.card .value{font-size:22px}}
+</style>
+</head>
+<body>
+<h1>The One<span>.</span>Pixel — Command</h1>
+<div class="grid">
+
+<div class="card">
+<h2>System</h2>
+<div class="status"><span class="dot green"></span> IR <span class="jade">LIVE</span></div>
+<div class="status"><span class="dot green"></span> PDP <span class="jade">ACTIVE</span></div>
+<div class="status"><span class="dot copper"></span> Policy <span class="copper">v1.0.0</span></div>
+<div class="status"><span class="dot green"></span> Chain <span class="jade">INTACT</span></div>
+<div class="sub" style="margin-top:12px">Transport: file (dev) &middot; Single writer &middot; Append-only</div>
+</div>
+
+<div class="card">
+<h2>Log</h2>
+<div class="value jade">3</div>
+<div class="sub">events in chain</div>
+<div class="bar"><div class="bar-fill" style="width:3%;background:#00A86B"></div></div>
+<div class="log">
+<div><span class="type">view</span> &middot; VP-021 &middot; <span class="hash">29aa6545...</span></div>
+<div><span class="type">view</span> &middot; VP-021 &middot; <span class="hash">29aa6545...</span></div>
+<div><span class="type" style="color:#FF2200">leak</span> &middot; VP-021 &middot; <span class="hash">501f3f08...</span></div>
+</div>
+</div>
+
+<div class="card">
+<h2>Vulnerability Patterns</h2>
+<div class="value copper">20</div>
+<div class="sub">loaded &middot; 245 connections</div>
+<div class="bar"><div class="bar-fill" style="width:80%;background:#B87333"></div></div>
+<div class="sub" style="margin-top:8px">4 pending (VP-022 to VP-025) &middot; <span class="copper">real: true</span></div>
+</div>
+
+<div class="card">
+<h2>Arena</h2>
+<div class="status"><span class="dot gray"></span> Storm <span style="color:#666">INACTIVE</span></div>
+<div class="status"><span class="dot green"></span> Drones <span class="jade">PATROL</span></div>
+<div class="sub" style="margin-top:8px">Window: 300s &middot; Mode: <span class="copper">HUNT</span> ready</div>
+<div class="prefix">
+<span class="active">PLAY</span>
+<span>LEARN</span>
+<span>WATCH</span>
+<span style="border-color:#FF2200;color:#FF2200">BREAK</span>
+</div>
+</div>
+
+<div class="card">
+<h2>Hall of Fame</h2>
+<div class="value crystal">1</div>
+<div class="sub">badge earned &middot; student-001</div>
+<div class="bar"><div class="bar-fill" style="width:4%;background:#E8F4FD"></div></div>
+<div class="sub" style="margin-top:8px">VP-021 &middot; <span class="copper">SMAC:21:12:19:83</span></div>
+</div>
+
+<div class="card">
+<h2>Professor</h2>
+<div class="status"><span class="dot gray"></span> Cold spots <span style="color:#666">SCANNING</span></div>
+<div class="status"><span class="dot gray"></span> Synthetic VPs <span style="color:#666">0</span></div>
+<div class="sub" style="margin-top:8px">Next storm: <span class="red">SCHEDULED</span></div>
+</div>
+
+<div class="card">
+<h2>Network</h2>
+<div class="status"><span class="dot green"></span> CDN <span class="jade">EDGE</span></div>
+<div class="status"><span class="dot green"></span> SSL <span class="jade">ACTIVE</span></div>
+<div class="status"><span class="dot green"></span> DNS <span class="jade">CNAME</span></div>
+<div class="sub" style="margin-top:8px">onepixelhi5.academy &rarr; onepixelhi5.pages.dev</div>
+</div>
+
+<div class="card">
+<h2>Witness Stamp</h2>
+<div class="value" style="font-size:16px;color:#B87333">SMAC:21:12:19:83</div>
+<div class="sub" style="margin-top:8px">
+11 layers verified &middot; 121 = 11&sup2;<br>
+The solstice &middot; The archer &middot; The year
+</div>
+</div>
+
+</div>
+<div style="text-align:center;margin-top:24px;color:#333;font-size:11px">
+O + O = S &middot; 5 + 5 = 1 &middot; I = ! &middot; The pixel holds.
+</div>
+</body>
+</html>
